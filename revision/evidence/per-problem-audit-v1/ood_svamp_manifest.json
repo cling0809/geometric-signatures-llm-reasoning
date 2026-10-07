@@ -1,0 +1,91 @@
+{
+  "excluded_content_columns": [
+    "answer",
+    "generated_text",
+    "generation_seed",
+    "gold",
+    "pred",
+    "problem",
+    "prompt",
+    "question"
+  ],
+  "output": {
+    "columns": [
+      "suite",
+      "comparison",
+      "arm",
+      "layer",
+      "alpha",
+      "sample_id",
+      "correct",
+      "text_tokens",
+      "n_generated_tokens",
+      "n_content_tokens",
+      "stop_reason",
+      "truncated",
+      "text_tokens_whitespace",
+      "distinct_2gram_ratio",
+      "distinct_4gram_ratio",
+      "repeated_4gram_fraction",
+      "answer_marker_position",
+      "answer_marker_relative_position"
+    ],
+    "file": "ood_svamp.csv",
+    "rows": 16000,
+    "sha256": "4370ef77ae20c4ae1bb8ed7543275840de95dfa3d30df9f24cad2fb183b73054"
+  },
+  "privacy_boundary": "No prompt, problem text, gold answer, prediction, generated text, or generation seed is included.",
+  "protocol": "tacl-11241-anonymous-per-problem-audit-v1",
+  "report_manifest_sha256": "ff0110019d117054a6caed9495a787721624e98a3a8dd5bd830061de200d95a9",
+  "source_artifacts": [
+    {
+      "comparison": "crosssteer_source",
+      "relative_source": "crosssteer_source/per_sample.parquet",
+      "rows": 2000,
+      "sha256": "52346ca15afc2ce5c7783b6ab903baf8fb22d3b50927f6ad7455b082c8a2b0e4"
+    },
+    {
+      "comparison": "target_calibrated",
+      "relative_source": "target_calibrated/per_sample.parquet",
+      "rows": 2000,
+      "sha256": "62523419de03c67ac21b1fd68584841096e23eec6c49858f448015640b86fb3e"
+    },
+    {
+      "comparison": "caa_target_prompt_final",
+      "relative_source": "caa_target_prompt_final/per_sample.parquet",
+      "rows": 2000,
+      "sha256": "5986fc2c274938deb5828628715aa732e89787f52e3dc1d48a32ab5ed4a34fdd"
+    },
+    {
+      "comparison": "actadd_target_prompt_final",
+      "relative_source": "actadd_target_prompt_final/per_sample.parquet",
+      "rows": 2000,
+      "sha256": "a03489efd01c161e583bdad153facf743514d0a7deca69d64a03f762f64d1ee9"
+    },
+    {
+      "comparison": "sparse_caa_coordinate_10pct",
+      "relative_source": "sparse_caa_coordinate_10pct/per_sample.parquet",
+      "rows": 2000,
+      "sha256": "37ad2664ae4f2b06f3f3cd063018803bbdeba7b98686c54f0483eeffd3fae296"
+    },
+    {
+      "comparison": "matched_norm_random",
+      "relative_source": "matched_norm_random/per_sample.parquet",
+      "rows": 2000,
+      "sha256": "e778892f378b49782c482381320cba8b5fa3dc2e8ae59a8efc6c8572200f64d6"
+    },
+    {
+      "comparison": "sae_sparse_activation",
+      "relative_source": "sae_sparse_activation/per_sample.parquet",
+      "rows": 2000,
+      "sha256": "31739e352a1cd9e9d638fb8582aad4057c09a7b3d48170fcdbc38b09b7d0175d"
+    },
+    {
+      "comparison": "negative_crosssteer_source",
+      "relative_source": "negative_crosssteer_source/per_sample.parquet",
+      "rows": 2000,
+      "sha256": "20da0ecb1c26ea1aa3003ac1f2e4073a4e1af59fba38caf160db964a49db5758"
+    }
+  ],
+  "suite": "ood_svamp"
+}

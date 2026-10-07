@@ -1,0 +1,7 @@
+{
+  "source_run": "/root/AI/runs/tacl-revision/long-context-report-qwen-instruct-crosssteer_source-b32768-v2",
+  "direction": "crosssteer_source",
+  "budget": 32768,
+  "status": "complete",
+  "selection": "frozen from Qwen v3 locked selection; no long-context retuning"
+}

@@ -1,0 +1,18 @@
+{
+  "addendum_doc": "revision/OOD_4096_AUDIT_PROTOCOL.md",
+  "addendum_sha256": "dd0bbced6744cd36eae22578119a2e66e8ebbe55d46ef65346f43796ade4f172",
+  "max_new_tokens": 4096,
+  "methods": [
+    "actadd_target_prompt_final",
+    "caa_target_prompt_final",
+    "crosssteer_source",
+    "matched_norm_random",
+    "negative_crosssteer_source",
+    "sae_sparse_activation",
+    "sparse_caa_coordinate_10pct",
+    "target_calibrated"
+  ],
+  "n_methods": 8,
+  "protocol": "tacl-11241-ood-4096-audit-v1",
+  "selection_sha256": "c77fd76a762815b0bb2f4afe34a5f5f2ff4c1af57af9cda64ea14835d27551bf"
+}

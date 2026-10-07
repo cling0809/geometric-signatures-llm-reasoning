@@ -1,0 +1,17 @@
+exp_id: 2026-05-17_extract-deepseek-r1-distill-1.5b-100
+seed: 42
+
+model:
+  name: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:1                    # parallelizable with the cuda:0 run
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 512

@@ -1,0 +1,24 @@
+protocol_note: Fresh score-blind diagnostic confirmation. All roles share the same GSM8K prompt, split and decoder envelope; this is not a capability leaderboard.
+exp_id: revision_signature_qwen_math_gsm8k_300_b2048_v1
+seed: 11241
+model:
+  name: Qwen/Qwen2.5-Math-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 300
+extraction:
+  max_new_tokens: 2048
+revision_protocol:
+  name: tacl-11241-signature-confirmation-v1
+  family: qwen
+  role: Math-Instruct
+  analysis: fixed 7-metric x relative-depth length-residualized signature; no layer/metric
+    selection
+  partition_salt: tacl-11241-signature-confirmation-v1-qwen-gsm8k-b2048
+  min_per_class_per_hash_partition: 10
+  max_generation_truncation_rate: 0.25

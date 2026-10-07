@@ -1,0 +1,19 @@
+exp_id: 2026-05-17_extract-pilot-gsm8k
+seed: 42
+
+model:
+  name: Qwen/Qwen2.5-Math-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss          # direct OSS pull (see datasets/gsm8k.py); modelscope wrapper unstable
+  split: test
+  n_samples: 20
+
+extraction:
+  max_new_tokens: 512
+  # Phase 0 pilot: capture every generated token, all layers.
+  # Phase 1 will narrow if signal-to-noise is poor.

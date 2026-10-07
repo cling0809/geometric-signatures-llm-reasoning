@@ -1,0 +1,42 @@
+{
+  "audit": {
+    "budget_hit_rate": 0.1,
+    "eligible": false,
+    "failures": [
+      "severe_repetition_rate=0.100>max_severe_repetition_rate=0.050"
+    ],
+    "n_problem_ids": 20,
+    "n_rows": 20,
+    "severe_repetition_rate": 0.1
+  },
+  "config_sha256": "a09a278166aac26ab5efa4a1732b23c5f1253d37fa9034d169ce66c460a384d0",
+  "expected_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "labels_sha256": "90056719d0454e576c23d8543bc0a7bc7f3646672c8f10575ab91556d60089dc",
+  "max_budget_hit_rate": 0.25,
+  "max_new_tokens": 32768,
+  "max_severe_repetition_rate": 0.05,
+  "protocol": "tacl-11241-official-context-pooled-readiness-v1",
+  "run": "/root/AI/runs/revision_gsm8k_r1_official32k_capability20",
+  "severe_repetition_fraction": 0.95
+}

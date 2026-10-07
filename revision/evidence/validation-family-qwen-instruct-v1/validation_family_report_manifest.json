@@ -1,0 +1,174 @@
+{
+  "methods": [
+    {
+      "decision": {
+        "alpha": 0.05,
+        "baseline_mean_repeated_4gram_fraction": 0.07302293841781382,
+        "baseline_mean_text_tokens": 511.14,
+        "cells_passing_behavior_guard": 16,
+        "cells_total": 16,
+        "eligible": true,
+        "layer": 14,
+        "mean_repeated_4gram_fraction": 0.0589474242889823,
+        "mean_text_tokens": 511.1,
+        "method": "crosssteer_source",
+        "reason": "selected_by_preregistered_validation_rule",
+        "validation_accuracy": 0.66,
+        "validation_delta": 0.08
+      },
+      "method": "crosssteer_source",
+      "run_dir": "/root/AI/runs/tacl-revision/validation-grid-v1-crosssteer_source",
+      "summary_sha256": "d5741864e362f366ed35a63666ca4e8a488ae99bf7cd38574a3bb57c30a6d6c9"
+    },
+    {
+      "decision": {
+        "alpha": 0.2,
+        "baseline_mean_repeated_4gram_fraction": 0.07302293841781382,
+        "baseline_mean_text_tokens": 511.14,
+        "cells_passing_behavior_guard": 16,
+        "cells_total": 16,
+        "eligible": true,
+        "layer": 24,
+        "mean_repeated_4gram_fraction": 0.0710778539390631,
+        "mean_text_tokens": 511.13,
+        "method": "target_calibrated",
+        "reason": "selected_by_preregistered_validation_rule",
+        "validation_accuracy": 0.65,
+        "validation_delta": 0.07
+      },
+      "method": "target_calibrated",
+      "run_dir": "/root/AI/runs/tacl-revision/validation-grid-v1-target_calibrated",
+      "summary_sha256": "66e2c2cf9643b29c7b1beeec3638a4d8c6c0ddc1b7231ab638f9d4ebf68b0af4"
+    },
+    {
+      "decision": {
+        "alpha": 0.2,
+        "baseline_mean_repeated_4gram_fraction": 0.07302293841781382,
+        "baseline_mean_text_tokens": 511.14,
+        "cells_passing_behavior_guard": 16,
+        "cells_total": 16,
+        "eligible": true,
+        "layer": 20,
+        "mean_repeated_4gram_fraction": 0.0741178561090518,
+        "mean_text_tokens": 511.05,
+        "method": "caa_target_prompt_final",
+        "reason": "selected_by_preregistered_validation_rule",
+        "validation_accuracy": 0.67,
+        "validation_delta": 0.09
+      },
+      "method": "caa_target_prompt_final",
+      "run_dir": "/root/AI/runs/tacl-revision/validation-grid-v1-caa_target_prompt_final",
+      "summary_sha256": "a5dcf6310e6e3dfda917b4c0df47da1ae1733b17fb6b7e85a06c877874ab193e"
+    },
+    {
+      "decision": {
+        "alpha": 0.2,
+        "baseline_mean_repeated_4gram_fraction": 0.07302293841781382,
+        "baseline_mean_text_tokens": 511.14,
+        "cells_passing_behavior_guard": 16,
+        "cells_total": 16,
+        "eligible": true,
+        "layer": 20,
+        "mean_repeated_4gram_fraction": 0.0700910597658103,
+        "mean_text_tokens": 511.04,
+        "method": "actadd_target_prompt_final",
+        "reason": "selected_by_preregistered_validation_rule",
+        "validation_accuracy": 0.64,
+        "validation_delta": 0.06
+      },
+      "method": "actadd_target_prompt_final",
+      "run_dir": "/root/AI/runs/tacl-revision/validation-grid-v1-actadd_target_prompt_final",
+      "summary_sha256": "1ed4d040b67b308101218cc7f1ef1c4e5430ff3a20aadfd677f0591f54b10471"
+    },
+    {
+      "decision": {
+        "alpha": 0.2,
+        "baseline_mean_repeated_4gram_fraction": 0.07302293841781382,
+        "baseline_mean_text_tokens": 511.14,
+        "cells_passing_behavior_guard": 16,
+        "cells_total": 16,
+        "eligible": true,
+        "layer": 14,
+        "mean_repeated_4gram_fraction": 0.0621506243026334,
+        "mean_text_tokens": 511.04,
+        "method": "sparse_caa_coordinate_10pct",
+        "reason": "selected_by_preregistered_validation_rule",
+        "validation_accuracy": 0.66,
+        "validation_delta": 0.08
+      },
+      "method": "sparse_caa_coordinate_10pct",
+      "run_dir": "/root/AI/runs/tacl-revision/validation-grid-v1-sparse_caa_coordinate_10pct",
+      "summary_sha256": "47bff7749d50866635a2fc276ffa98c3bf42249f06627dfa3ae4c04da1f2ccac"
+    },
+    {
+      "decision": {
+        "alpha": 0.025,
+        "baseline_mean_repeated_4gram_fraction": 0.07302293841781382,
+        "baseline_mean_text_tokens": 511.14,
+        "cells_passing_behavior_guard": 16,
+        "cells_total": 16,
+        "eligible": true,
+        "layer": 24,
+        "mean_repeated_4gram_fraction": 0.0657542608248752,
+        "mean_text_tokens": 511.02,
+        "method": "matched_norm_random",
+        "reason": "selected_by_preregistered_validation_rule",
+        "validation_accuracy": 0.62,
+        "validation_delta": 0.04
+      },
+      "method": "matched_norm_random",
+      "run_dir": "/root/AI/runs/tacl-revision/validation-grid-v1-matched_norm_random",
+      "summary_sha256": "aaea72ae2dcdcc59a1f913f151b0be9d31b037e847705568c841e2d89e4a6a91"
+    },
+    {
+      "decision": {
+        "alpha": 0.2,
+        "baseline_mean_repeated_4gram_fraction": 0.07302293841781382,
+        "baseline_mean_text_tokens": 511.14,
+        "cells_passing_behavior_guard": 16,
+        "cells_total": 16,
+        "eligible": true,
+        "layer": 20,
+        "mean_repeated_4gram_fraction": 0.0663535893761056,
+        "mean_text_tokens": 510.99,
+        "method": "sae_sparse_activation",
+        "reason": "selected_by_preregistered_validation_rule",
+        "validation_accuracy": 0.68,
+        "validation_delta": 0.1
+      },
+      "method": "sae_sparse_activation",
+      "run_dir": "/root/AI/runs/tacl-revision/validation-grid-v1-sae_sparse_activation",
+      "summary_sha256": "782c4b93094e3571dc0da8eed1dbc8ba34c168b3674de66c873838c334f83f07"
+    },
+    {
+      "decision": {
+        "alpha": 0.1,
+        "baseline_mean_repeated_4gram_fraction": 0.07302293841781382,
+        "baseline_mean_text_tokens": 511.14,
+        "cells_passing_behavior_guard": 16,
+        "cells_total": 16,
+        "eligible": true,
+        "layer": 24,
+        "mean_repeated_4gram_fraction": 0.0598030858478638,
+        "mean_text_tokens": 511.03,
+        "method": "negative_crosssteer_source",
+        "reason": "selected_by_preregistered_validation_rule",
+        "validation_accuracy": 0.6,
+        "validation_delta": 0.02
+      },
+      "method": "negative_crosssteer_source",
+      "run_dir": "/root/AI/runs/tacl-revision/validation-grid-v1-negative_crosssteer_source",
+      "summary_sha256": "aa6afe8c8dab912f28391452e4032dc1d467f32d0207cee1f2eb8926b84f982c"
+    }
+  ],
+  "n_cells": 128,
+  "n_methods": 8,
+  "outputs": {
+    "validation_complete_summary.csv": "b42187a8cf240756b77d9b296ff36b2bf760da0e31545700adb1b35ef85df070",
+    "validation_selected_rows.tex": "efedb5857023de95c6f01566e6b868673a2555d8b0e037a0e68475f8f5b593ed"
+  },
+  "protocol": "tacl-11241-frozen-validation-family-report-v1",
+  "selected_cells": 8,
+  "selection_path": "/root/AI/runs/tacl-revision/selection-qwen-instruct-v1.json",
+  "selection_sha256": "1da573d7111cdc781122de727620f0a7d4cda2243347c06a530e05b21091f016"
+}

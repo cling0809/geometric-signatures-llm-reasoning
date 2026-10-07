@@ -1,0 +1,23 @@
+exp_id: 2026-05-21_qwen-math-math500-2048-n16-full-metriconly-shard375-499
+seed: 42
+
+model:
+  name: Qwen/Qwen2.5-Math-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: math500
+  source: hf-mirror
+  split: test
+  start_sample: 375
+  n_samples: 125
+
+extraction:
+  max_new_tokens: 2048
+
+sampling:
+  num_samples: 16
+  temperature: 0.7
+  top_p: 0.95

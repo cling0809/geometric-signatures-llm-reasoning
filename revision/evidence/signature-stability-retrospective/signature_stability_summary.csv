@@ -1,0 +1,10 @@
+audit,source,nearest_neighbor,bootstrap_probability,n_resamples,provenance,claim_status
+1.5B,Base,Instruct,0.631,1000,retrospective_problem_bootstrap,protocol_bounded
+1.5B,Instruct,Base,0.695,1000,retrospective_problem_bootstrap,protocol_bounded
+1.5B,Math,R1-Distill,0.689,1000,retrospective_problem_bootstrap,protocol_bounded
+1.5B,R1-Distill,Base,0.460,1000,retrospective_problem_bootstrap,unstable
+1.5B,R1-Distill,Instruct,0.379,1000,retrospective_problem_bootstrap,unstable
+7B,Base,R1,0.993,1000,retrospective_problem_bootstrap,stable_in_audit
+7B,R1,Base,0.995,1000,retrospective_problem_bootstrap,stable_in_audit
+7B,Instruct,Base,0.506,1000,retrospective_problem_bootstrap,unstable
+7B,Math,Base,0.512,1000,retrospective_problem_bootstrap,unstable

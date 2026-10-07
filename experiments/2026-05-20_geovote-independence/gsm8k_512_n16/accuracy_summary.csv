@@ -1,0 +1,17 @@
+run,dataset,prefix_n,strategy,accuracy,n_questions
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,first,0.76,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,majority,0.9,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,logprob_max,0.82,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,logprob_weighted,0.82,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,geo_pick,0.76,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,geovote,0.88,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,geo_majority,0.88,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,oracle,0.97,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,first,0.76,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,majority,0.92,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,logprob_max,0.84,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,logprob_weighted,0.84,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,geo_pick,0.73,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,geovote,0.9,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,geo_majority,0.91,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,oracle,0.99,100

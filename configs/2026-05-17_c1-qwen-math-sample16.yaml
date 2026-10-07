@@ -1,0 +1,22 @@
+exp_id: 2026-05-17_c1-qwen-math-sample16
+seed: 42
+
+model:
+  name: Qwen/Qwen2.5-Math-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 512
+
+sampling:
+  num_samples: 16
+  temperature: 0.7
+  top_p: 0.95

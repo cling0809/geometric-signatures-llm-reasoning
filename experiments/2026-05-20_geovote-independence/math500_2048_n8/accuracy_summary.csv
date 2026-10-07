@@ -1,0 +1,9 @@
+run,dataset,prefix_n,strategy,accuracy,n_questions
+2026-05-19_qwen-math-math500-2048-n8,math500,8,first,0.65,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,majority,0.76,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,logprob_max,0.72,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,logprob_weighted,0.72,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,geo_pick,0.64,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,geovote,0.77,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,geo_majority,0.77,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,oracle,0.87,100

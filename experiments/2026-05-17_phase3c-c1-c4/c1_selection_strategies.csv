@@ -1,0 +1,9 @@
+strategy,accuracy,n_questions
+oracle,0.97,100
+majority_vote,0.9,100
+geo_min_weighted_vote_mean_step_norm_L20,0.88,100
+logprob_max,0.82,100
+logprob_weighted_vote,0.82,100
+random_pick,0.78,100
+greedy_pass1,0.76,100
+geo_min_mean_step_norm_L20,0.76,100

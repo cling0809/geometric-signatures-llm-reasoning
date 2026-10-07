@@ -1,0 +1,24 @@
+phase,dataset,strategy,acc,target,source,source_acc,target_baseline,target_alpha2,delta_pp,alpha
+C1,GSM8K,greedy_pass1,0.76,,,,,,,
+C1,GSM8K,random_pick,0.78,,,,,,,
+C1,GSM8K,logprob_max,0.82,,,,,,,
+C1,GSM8K,logprob_weighted_vote,0.82,,,,,,,
+C1,GSM8K,geo_min_weighted_vote@L20,0.88,,,,,,,
+C1,GSM8K,majority_vote,0.9,,,,,,,
+C1,GSM8K,oracle,0.97,,,,,,,
+C1,MATH-500,greedy_pass1,0.63,,,,,,,
+C1,MATH-500,random_pick,0.68,,,,,,,
+C1,MATH-500,logprob_max,0.7,,,,,,,
+C1,MATH-500,logprob_weighted_vote,0.7,,,,,,,
+C1,MATH-500,geo_min_weighted_vote@L20,0.75,,,,,,,
+C1,MATH-500,majority_vote,0.77,,,,,,,
+C1,MATH-500,oracle,0.87,,,,,,,
+C4,GSM8K,,,R1-Distill,Qwen-Base,0.37,0.32,0.42,0.1,
+C4,GSM8K,,,R1-Distill,Qwen-Instruct,0.6,0.32,0.45,0.13,
+C4,GSM8K,,,R1-Distill,Qwen-Math (cross-task best),0.78,0.32,0.47,0.15,
+C4,MATH-500,,,R1-Distill,Qwen-Math/GSM8K (cross-task),0.78,0.17,0.22,0.05,
+C4,MATH-500,,,R1-Distill,"Qwen-Instruct/MATH-500 (same-task, weak source)",0.31,0.17,0.2,0.03,
+C4,MATH-500,,,R1-Distill,"Qwen-Math/MATH-500 (same-task, strong source)",0.63,0.17,0.24,0.07,
+C4 cross-target,MATH-500,,0.29,Qwen-Instruct (non-math),Qwen-Math/GSM8K,,,,,0.0
+C4 cross-target,MATH-500,,0.26,Qwen-Instruct (non-math),Qwen-Math/GSM8K,,,,,1.0
+C4 cross-target,MATH-500,,0.1,Qwen-Instruct (non-math),Qwen-Math/GSM8K,,,,,2.0

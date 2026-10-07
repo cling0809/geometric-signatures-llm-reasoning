@@ -1,0 +1,2 @@
+method,layer,alpha,mean_text_tokens,mean_generated_tokens,truncation_rate,mean_repeated_4gram_fraction,n,baseline_accuracy,method_accuracy,delta,repairs,breaks,bootstrap_ci_low,bootstrap_ci_high,exact_sign_p_value
+crosssteer_source,20,0.2,498.08,498.22,0.86,0.23612350779374355,100,0.41,0.4,-0.01,16,17,-0.12,0.1,1.0

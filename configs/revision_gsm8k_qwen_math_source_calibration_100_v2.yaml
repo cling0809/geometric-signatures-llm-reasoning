@@ -1,0 +1,22 @@
+# One corrective source-only calibration for the formal Qwen CrossSteer vector.
+# The original 512-token source run had a 36% generated-token budget-hit rate,
+# above the 25% frozen source-quality ceiling.  This configuration is fixed at
+# 2048 new tokens (within the model's 4096-position context); it is not a
+# search.  If this one run fails its audit, CrossSteer source transfer stops.
+exp_id: revision_gsm8k_qwen_math_source_calibration_100_v2
+seed: 42
+
+model:
+  name: Qwen/Qwen2.5-Math-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 2048

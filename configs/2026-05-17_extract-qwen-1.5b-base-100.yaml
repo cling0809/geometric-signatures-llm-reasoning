@@ -1,0 +1,26 @@
+exp_id: 2026-05-17_extract-qwen-1.5b-base-100
+seed: 42
+
+model:
+  # Pure base model: pretraining only, NO instruct/SFT/RLHF.
+  # The shared base of Qwen2.5-1.5B-Instruct and Qwen2.5-Math-1.5B-Instruct.
+  # DeepSeek-R1-Distill-Qwen-1.5B is also distilled FROM this Qwen base.
+  # So the 4-model set (Base / Instruct / Math-Instruct / R1-Distill) forms a
+  # clean "same base, different post-training" controlled comparison.
+  name: Qwen/Qwen2.5-1.5B
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 512
+  # NOTE: base model has no chat template; we use the same prompt as the
+  # instruct models for fair geometric comparison. Accuracy will be much lower,
+  # but the *internal trajectory geometry* is what we care about — we can still
+  # compute geometric signatures regardless of accuracy.

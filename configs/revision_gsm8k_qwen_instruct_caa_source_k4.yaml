@@ -1,0 +1,24 @@
+# Frozen source-training-only contrast pool for CAA/ActAdd baselines.
+# This does not include validation (100--199), locked test (200--299), or reserve IDs.
+exp_id: revision_gsm8k_qwen_instruct_caa_source_k4
+seed: 314159
+
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+sampling:
+  num_samples: 4
+  temperature: 0.7
+  top_p: 0.95
+
+extraction:
+  max_new_tokens: 512

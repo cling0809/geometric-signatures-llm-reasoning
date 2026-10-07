@@ -1,0 +1,9 @@
+method,n,baseline_accuracy,method_accuracy,delta,repairs,breaks,bootstrap_ci_low,bootstrap_ci_high,exact_sign_p_value
+shortest,50,0.94,0.92,-0.02,1,2,-0.1,0.04,1.0
+length_residual_geo_vote,50,0.94,0.92,-0.02,1,2,-0.1,0.04,1.0
+length_residual_geo_pick,50,0.94,0.92,-0.02,1,2,-0.1,0.04,1.0
+historical_geovote,50,0.94,0.9,-0.04,0,2,-0.1,0.0,0.5
+raw_geo_pick,50,0.94,0.84,-0.1,0,5,-0.18,-0.02,0.0625
+longest,50,0.94,0.84,-0.1,1,6,-0.2,0.0,0.125
+first,50,0.94,0.84,-0.1,1,6,-0.2,0.0,0.125
+logprob_weighted,50,0.94,0.82,-0.12,0,6,-0.22,-0.04,0.03125

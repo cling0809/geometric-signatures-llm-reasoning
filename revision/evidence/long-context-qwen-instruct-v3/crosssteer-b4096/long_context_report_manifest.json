@@ -1,0 +1,45 @@
+{
+  "budget": 4096,
+  "method": "crosssteer_source",
+  "outputs": {
+    "long_context_rows.tex": "fa08d776744f04841a76d397bffe2fb49361111e359cb6cf1903735e7cd6ad28",
+    "long_context_summary.csv": "c370303e23c819607e6b029fc5de26b976f64af7d118d0e457ec82f9088a03e7"
+  },
+  "plan_sha256": "1983e611e38ddea0fd600ab1d80044f8b0d356eb378fd066d341ca4c4412eccc",
+  "policies": [
+    {
+      "hashes": {
+        "per_sample.parquet": "b8e5707cf7b9974cec794b8d811ab81302bc31697e1701f007d1a8424587e971",
+        "resolved_manifest.json": "67f7c1ab40d4fd5796e5c518d252b368bcab72048ef28bce73ccb710f33865ae"
+      },
+      "name": "constant",
+      "run_dir": "/root/AI/runs/tacl-revision/long-context-qwen-instruct-crosssteer_source-b4096-v2/constant"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "1206917cc8e29513344346c5e1bc4c2610591def7b4fb22e7193dd97c768da71",
+        "resolved_manifest.json": "c9916cc2c964504ed5b9da360d641cd08347c048d0b075fe90ed85fcf22636b0"
+      },
+      "name": "exponential-1024",
+      "run_dir": "/root/AI/runs/tacl-revision/long-context-qwen-instruct-crosssteer_source-b4096-v2/exponential-1024"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "428de87c80bf2ae7b662b67d465f4632639c824393fdc3e6a5e909a6712fa51c",
+        "resolved_manifest.json": "073adbd0935e0d77a0fa8b5859475535ed1fe52b0b0ecc5b2f015abde567e969"
+      },
+      "name": "prefix-256",
+      "run_dir": "/root/AI/runs/tacl-revision/long-context-qwen-instruct-crosssteer_source-b4096-v2/prefix-256"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "20122cc30eba0aa24892959c24bcbb8d17ecd2b31b9b50e967e51f8bb200b1ae",
+        "resolved_manifest.json": "259272ad4b8336bddcc2feb09bbacc65b70d00baeadd218aa20ff3cc30c1943a"
+      },
+      "name": "relative-hidden-rms",
+      "run_dir": "/root/AI/runs/tacl-revision/long-context-qwen-instruct-crosssteer_source-b4096-v2/relative-hidden-rms"
+    }
+  ],
+  "protocol": "tacl-11241-long-context-report-v1",
+  "selection_sha256": "c77fd76a762815b0bb2f4afe34a5f5f2ff4c1af57af9cda64ea14835d27551bf"
+}

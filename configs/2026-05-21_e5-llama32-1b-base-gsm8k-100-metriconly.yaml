@@ -1,0 +1,17 @@
+exp_id: 2026-05-21_e5-llama32-1b-base-gsm8k-100-metriconly
+seed: 42
+
+model:
+  name: LLM-Research/Llama-3.2-1B
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:1
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 512

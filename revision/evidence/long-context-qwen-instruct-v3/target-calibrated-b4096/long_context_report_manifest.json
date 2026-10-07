@@ -1,0 +1,45 @@
+{
+  "budget": 4096,
+  "method": "target_calibrated",
+  "outputs": {
+    "long_context_rows.tex": "1cf358447c25433b46e60a9b28ce96cd119903c0685c6ed5fb92a8581bc1b3ca",
+    "long_context_summary.csv": "a563565a2a82ae6ef136b85f13a6ece3ebe1c0d8254507dba138e8bba8abce70"
+  },
+  "plan_sha256": "7dceb8e3195184b0dd6220cdf79d47698eae2a8e2ad0ed4549bca54d6985210c",
+  "policies": [
+    {
+      "hashes": {
+        "per_sample.parquet": "a5fde1fe86a2c0d387a073846b4170126dece67d74e4c7458d93d51b5de9e74b",
+        "resolved_manifest.json": "4e950d29375b1ee7a087a4bdda8f7b149b25700e931a04108e6dd1edec276e1f"
+      },
+      "name": "constant",
+      "run_dir": "/root/AI/runs/tacl-revision/long-context-qwen-instruct-target_calibrated-b4096-v2/constant"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "08d1fe2ea989c5866273e8f425e07d3e1779a26a7e08e3f1107cb20d7510819c",
+        "resolved_manifest.json": "32397dba4d0a53300ea2dacee1c07043c96f2ae256dc8c8c9ee737e45eaddc4c"
+      },
+      "name": "exponential-1024",
+      "run_dir": "/root/AI/runs/tacl-revision/long-context-qwen-instruct-target_calibrated-b4096-v2/exponential-1024"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "179b67e47005c8b18c0df178ed50131bb6732f47ee407e89a232181ba04c78b8",
+        "resolved_manifest.json": "0abd4f3b1faf4a48ecd2c84becb2deb950e2c456a4c7d3836a6a401e3c9a6b5a"
+      },
+      "name": "prefix-256",
+      "run_dir": "/root/AI/runs/tacl-revision/long-context-qwen-instruct-target_calibrated-b4096-v2/prefix-256"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "65b3447c055364d761024940b8e744e6fca712d9776875133379460644e9a557",
+        "resolved_manifest.json": "2bdaccf2a74215046f3512dc7f970b73ebe592a1f502fe77c9a8fb186361f531"
+      },
+      "name": "relative-hidden-rms",
+      "run_dir": "/root/AI/runs/tacl-revision/long-context-qwen-instruct-target_calibrated-b4096-v2/relative-hidden-rms"
+    }
+  ],
+  "protocol": "tacl-11241-long-context-report-v1",
+  "selection_sha256": "c77fd76a762815b0bb2f4afe34a5f5f2ff4c1af57af9cda64ea14835d27551bf"
+}

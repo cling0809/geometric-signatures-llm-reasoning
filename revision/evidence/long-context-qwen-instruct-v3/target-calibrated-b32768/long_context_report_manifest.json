@@ -1,0 +1,7 @@
+{
+  "source_run": "/root/AI/runs/tacl-revision/long-context-report-qwen-instruct-target_calibrated-b32768-v2",
+  "direction": "target_calibrated",
+  "budget": 32768,
+  "status": "complete",
+  "selection": "frozen from Qwen v3 locked selection; no long-context retuning"
+}

@@ -1,0 +1,21 @@
+# Provenance-complete target calibration paired with the corrected 2048 Math source.
+# Same IDs, model, prompt, seed and 512-token target envelope as the original
+# target-local calibration; this is a telemetry/provenance regeneration, not a
+# label-budget or hyperparameter change.
+exp_id: revision_gsm8k_qwen_instruct_calibration_100_v2
+seed: 42
+
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:1
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 512

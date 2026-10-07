@@ -1,0 +1,17 @@
+exp_id: 2026-05-17_extract-llama-1b-100
+seed: 42
+
+model:
+  name: LLM-Research/Llama-3.2-1B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 512

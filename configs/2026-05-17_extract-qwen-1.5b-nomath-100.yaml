@@ -1,0 +1,18 @@
+exp_id: 2026-05-17_extract-qwen-1.5b-nomath-100
+seed: 42
+
+model:
+  # The non-math sibling — control comparison vs the math-tuned Qwen2.5-Math-1.5B
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0                    # runs after the Llama job finishes
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 512

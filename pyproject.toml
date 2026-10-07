@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geoprobe"
+version = "0.1.0"
+description = "Geometric / topological diagnosis of LLM reasoning trajectories."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Tianlin Chen"}, {name = "Yiting Cai"}]
+
+# Loose pins on heavy deps — exact versions captured per-experiment via pip freeze.
+# Geometry libs (POT, gudhi, ripser) added in their dedicated phase to avoid premature env breakage.
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pyyaml>=6.0",
+    "tqdm>=4.66",
+    "rich>=13.0",
+    "pandas>=2.0",
+    "matplotlib>=3.8",
+    "scikit-learn>=1.4",
+]
+
+[project.optional-dependencies]
+# Install with: pip install -e ".[torch]"
+revision = [
+    # Formal symbolic MATH-500 evaluator for the TACL-11241 OOD protocol.
+    "math-verify==0.9.0",
+]
+
+# Install with: pip install -e "[torch]"
+torch = [
+    "torch>=2.5",
+    "transformers>=4.45",
+    "accelerate>=1.0",
+    "datasets>=3.0",
+    "safetensors>=0.4",
+    "modelscope>=1.18",        # primary model/dataset source (China-friendly)
+    "pyarrow>=15.0",            # for parquet I/O
+    # modelscope.msdatasets has hidden runtime deps not declared upstream — pin them ourselves.
+    # See docs/lessons_learned/2026-05-17_modelscope-msdataset-hidden-deps.md
+    "addict>=2.4",
+    "simplejson>=3.19",
+    "sortedcontainers>=2.4",
+    "oss2>=2.18",
+]
+# Geometric / topological tools. Install only when entering Phase 2+.
+# Install with: pip install -e ".[geo]"
+geo = [
+    "POT>=0.9",         # optimal transport
+    "scikit-dimension>=0.3",  # intrinsic dimension estimators
+    # "gudhi",          # persistent homology — install in Phase 3 if needed
+    # "ripser",         # alternative PH backend
+    # "umap-learn",     # nonlinear embedding for viz
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "pre-commit>=3.5",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "UP"]
+ignore = ["E501"]  # line length handled by formatter

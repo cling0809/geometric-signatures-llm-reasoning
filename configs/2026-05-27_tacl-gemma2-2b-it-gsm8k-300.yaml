@@ -1,0 +1,17 @@
+exp_id: 2026-05-27_tacl-gemma2-2b-it-gsm8k-300
+seed: 42
+
+model:
+  name: LLM-Research/gemma-2-2b-it
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:1
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 300
+
+extraction:
+  max_new_tokens: 512

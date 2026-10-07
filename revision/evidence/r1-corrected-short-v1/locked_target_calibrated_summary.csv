@@ -1,0 +1,2 @@
+method,layer,alpha,mean_text_tokens,mean_generated_tokens,truncation_rate,mean_repeated_4gram_fraction,n,baseline_accuracy,method_accuracy,delta,repairs,breaks,bootstrap_ci_low,bootstrap_ci_high,exact_sign_p_value
+target_calibrated,14,0.2,486.43,486.6,0.85,0.2697674480381036,100,0.41,0.44,0.03,17,14,-0.08,0.14,0.720100131817162

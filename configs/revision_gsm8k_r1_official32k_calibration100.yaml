@@ -1,0 +1,24 @@
+# R1 official-context source/target calibration. IDs 0--99 only.
+exp_id: revision_gsm8k_r1_official32k_calibration100
+seed: 11241
+
+model:
+  name: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+generation:
+  max_new_tokens: 32768
+  do_sample: true
+  temperature: 0.6
+  top_p: 0.95
+
+pooled_replay:
+  chunk_size: 1

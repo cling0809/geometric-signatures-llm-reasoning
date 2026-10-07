@@ -1,0 +1,29 @@
+phase,x_name,x,acc
+P1.1 cross-source,source,Base,0.42
+P1.1 cross-source,source,Instruct,0.45
+P1.1 cross-source,source,Math,0.47
+P1.2 alpha,alpha,0.0,0.32
+P1.2 alpha,alpha,2.0,0.47
+P1.2 alpha,alpha,2.5,0.39
+P1.2 alpha,alpha,3.0,0.38
+P1.2 alpha,alpha,4.0,0.32
+P1.2 alpha,alpha,5.0,0.25
+P1.3 layer,layer,5,0.36
+P1.3 layer,layer,10,0.4
+P1.3 layer,layer,14,0.47
+P1.3 layer,layer,20,0.45
+P1.3 layer,layer,24,0.44
+P2 C1 N=8,strategy,greedy_pass1,0.76
+P2 C1 N=8,strategy,random_pick,0.78
+P2 C1 N=8,strategy,logprob_max,0.82
+P2 C1 N=8,strategy,logprob_weighted_vote,0.82
+P2 C1 N=8,strategy,geo_min_weighted_vote@L20,0.88
+P2 C1 N=8,strategy,majority_vote,0.9
+P2 C1 N=8,strategy,oracle,0.97
+P2 C1 N=16,strategy,greedy_pass1,0.76
+P2 C1 N=16,strategy,random_pick,0.79
+P2 C1 N=16,strategy,logprob_max,0.84
+P2 C1 N=16,strategy,logprob_weighted_vote,0.84
+P2 C1 N=16,strategy,geo_min_weighted_vote@L20,0.9
+P2 C1 N=16,strategy,majority_vote,0.92
+P2 C1 N=16,strategy,oracle,0.99

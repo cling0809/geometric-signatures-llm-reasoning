@@ -1,0 +1,72 @@
+{
+  "methods": [
+    {
+      "hashes": {
+        "per_sample.parquet": "2e4599e02d2e8cab11d615118f08920d82b1162e31457cd1b7968877fedba676",
+        "resolved_manifest.json": "9299e2be606f02ac81a71f2ec6e78b94dfdc640c744da933f7176c6e7a55d543"
+      },
+      "label_budget": 0,
+      "method": "target_labels_k000_source_transfer",
+      "run_dir": "/root/AI/runs/tacl-revision/label-efficiency-qwen-instruct-v3/k000_source_transfer"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "1c7fcd348150fbb2e1293761349b50b0bce9059f61e259b6fc5bf8b728f8cd73",
+        "resolved_manifest.json": "e8355adc93756489e29050110eebdd0017cfe56c5387e24b076a7dc547a5a6b6"
+      },
+      "label_budget": 5,
+      "method": "target_labels_k005",
+      "run_dir": "/root/AI/runs/tacl-revision/label-efficiency-qwen-instruct-v3/k005"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "99a577b5a5efaa7ba8294b1fcf5ac6f77236975b074ba532776a3987de8ea5ff",
+        "resolved_manifest.json": "3271f03aa5952474252a526b79d6d1baab87153feae4136573a263c3e8556d51"
+      },
+      "label_budget": 10,
+      "method": "target_labels_k010",
+      "run_dir": "/root/AI/runs/tacl-revision/label-efficiency-qwen-instruct-v3/k010"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "8f40f32513917d3966d4858e265de570f99de9f06581d461c2fdcf8ea369071c",
+        "resolved_manifest.json": "0e51f6579cf82268f19385fd562d51b3cc18ad9160a8b039961bc373a6712113"
+      },
+      "label_budget": 20,
+      "method": "target_labels_k020",
+      "run_dir": "/root/AI/runs/tacl-revision/label-efficiency-qwen-instruct-v3/k020"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "3c0bb9fc7778626069972ad6f3071c416fbc5bf91e08a0bbf9a91f0dd1b355ca",
+        "resolved_manifest.json": "c4752c9c98f7873416176803594fed5edf72d7463ea1782cb5f8688afefcbaf7"
+      },
+      "label_budget": 50,
+      "method": "target_labels_k050",
+      "run_dir": "/root/AI/runs/tacl-revision/label-efficiency-qwen-instruct-v3/k050"
+    },
+    {
+      "hashes": {
+        "per_sample.parquet": "5d9450526083ace1f2b9ddf08bab5410e5b90d1b771ef21451042c97dd67b7f5",
+        "resolved_manifest.json": "3850e8be04c8b38837ef39e4f39da24ac25232a94feafa16dc90059b1fd879d9"
+      },
+      "label_budget": 100,
+      "method": "target_labels_k100",
+      "run_dir": "/root/AI/runs/tacl-revision/label-efficiency-qwen-instruct-v3/k100"
+    }
+  ],
+  "multiple_comparison_family": [
+    "target_labels_k000_source_transfer",
+    "target_labels_k005",
+    "target_labels_k010",
+    "target_labels_k020",
+    "target_labels_k050",
+    "target_labels_k100"
+  ],
+  "outputs": {
+    "label_efficiency_rows.tex": "8958657036293e6df5ac09db6639fb57523c5b81314c1f100569f32a11e69603",
+    "label_efficiency_summary.csv": "eb2ad45f8577117ed9c4c0ddd1bc2648fd88bd402fc30c2263cc3ee242de240c"
+  },
+  "plan_sha256": "1d4a7a73f54a8f6e7ca53da860f92c161165b40a6edb5146a4f719a08d982fa4",
+  "protocol": "tacl-11241-target-label-efficiency-report-v1"
+}

@@ -1,0 +1,5 @@
+partition,score,spearman_vs_length
+calibration,geo_conf,0.8295742175322958
+evaluation,geo_conf,0.7416420970591137
+calibration,length_residual_conf,-0.1995722874568586
+evaluation,length_residual_conf,-0.21363669657022732

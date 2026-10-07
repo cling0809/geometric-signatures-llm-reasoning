@@ -1,0 +1,4 @@
+STOP RULE TRIGGERED.  The independent, correctness-blind R1 official-context
+readiness audit measured a severe-repetition rate of 0.100 on 20 fixed GSM8K
+IDs, exceeding the preregistered 0.050 ceiling.  No R1 calibration, vector,
+validation, locked, or long-context steering result may be generated or used.

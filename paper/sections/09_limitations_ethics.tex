@@ -1,0 +1,21 @@
+\section*{Limitations}
+
+The diagnostic uses four matched-width Qwen-derived checkpoints, seven
+functionals, and retrospective artifacts. Architecture, scale,
+prompt, decoder, stopping, confidence, text style, and nonlinear length effects
+may alter it; log-length residualization establishes neither invariance nor a
+universal or causal taxonomy. Steering uses a 512-token primary comparison with
+separate 4,096/32,768-token audits and a corrected but cap-saturated R1 rerun;
+\textsc{GeoVote} remains a same-pool audit, not an independent confidence
+signal.
+
+\section*{Artifact Availability}
+
+Upon acceptance, we will release code, configurations, evaluator versions,
+content-free per-problem tables, 149 tests, and a CPU smoke test; weights,
+benchmark text, and raw hidden states are omitted.
+
+\section*{Ethics Statement}
+
+We use public benchmarks and open-weight models, with no private data;
+dual-use steering vectors are withheld until acceptance.

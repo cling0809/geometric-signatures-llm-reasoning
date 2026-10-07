@@ -1,0 +1,5 @@
+run,dataset,prefix_n,method_a,method_b,both_correct,a_only_recovery,b_only_breakage,both_wrong,net_a_minus_b,n_questions
+2026-05-19_qwen-math-math500-2048-n8,math500,8,geovote,majority,75,2,1,22,1,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,geo_majority,majority,75,2,1,22,1,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,geovote,logprob_weighted,70,7,2,21,5,100
+2026-05-19_qwen-math-math500-2048-n8,math500,8,geo_majority,logprob_weighted,70,7,2,21,5,100

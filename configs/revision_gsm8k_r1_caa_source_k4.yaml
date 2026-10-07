@@ -1,0 +1,27 @@
+# LEGACY SHORT-BUDGET ARTIFACT. Do not launch this config for any R1 capability,
+# baseline, or intervention claim. It is retained only because the obsolete
+# revision_run_r1_primary_chain.sh references it; that chain is superseded by
+# R1_OFFICIAL_CONTEXT_PROTOCOL.md.
+# Same-question contrast pool for R1 CAA/ActAdd, restricted to source IDs 0--99.
+exp_id: revision_gsm8k_r1_caa_source_k4
+seed: 314159
+
+model:
+  name: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+sampling:
+  num_samples: 4
+  temperature: 0.7
+  top_p: 0.95
+
+extraction:
+  max_new_tokens: 512

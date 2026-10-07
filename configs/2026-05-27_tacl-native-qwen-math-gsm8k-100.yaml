@@ -1,0 +1,20 @@
+exp_id: 2026-05-27_tacl-native-qwen-math-gsm8k-100
+seed: 42
+
+model:
+  name: Qwen/Qwen2.5-Math-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:1
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+prompt:
+  mode: chat_template
+
+extraction:
+  max_new_tokens: 512

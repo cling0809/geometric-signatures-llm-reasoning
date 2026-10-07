@@ -1,0 +1,10 @@
+run,dataset,prefix_n,analysis,value,p_value
+2026-05-19_qwen-math-math500-2048-n8,math500,8,spearman_geo_correct,0.02391464999725839,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,spearman_logprob_correct,0.11485525671555044,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,spearman_length_correct,-0.04725967849556189,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,partial_corr_geo_correct_ctrl_logprob_length,0.018971916523783897,0.5920857188936253
+2026-05-19_qwen-math-math500-2048-n8,math500,8,group_cv_logistic_auc:logprob_z,0.5682978354978354,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,group_cv_logistic_auc:geo_conf_z,0.5036121212121213,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,group_cv_logistic_auc:length_z,0.5274701298701299,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,group_cv_logistic_auc:logprob_z+length_z,0.563421645021645,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,group_cv_logistic_auc:logprob_z+length_z+geo_conf_z,0.5504069264069265,

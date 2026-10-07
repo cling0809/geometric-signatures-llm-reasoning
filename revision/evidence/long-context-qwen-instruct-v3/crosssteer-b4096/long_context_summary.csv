@@ -1,0 +1,5 @@
+policy,budget,n,baseline_accuracy,method_accuracy,delta_pp,bootstrap_ci_low_pp,bootstrap_ci_high_pp,repairs,breaks,exact_sign_p_value,holm_adjusted_p_value,baseline_mean_generated_tokens,method_mean_generated_tokens,generated_token_delta,baseline_truncation_rate,method_truncation_rate,baseline_repetition,method_repetition
+constant,4096,100,0.62,0.61,-1.0,-6.0,4.0,3,4,1.0,1.0,292.29,269.74,-22.55000000000001,0.0,0.0,0.060408360208871484,0.057460799501372145
+exponential-1024,4096,100,0.62,0.61,-1.0,-6.0,4.0,3,4,1.0,1.0,292.29,316.74,24.44999999999999,0.0,0.01,0.060408360208871484,0.055188503932955844
+prefix-256,4096,100,0.62,0.61,-1.0,-6.0,4.0,3,4,1.0,1.0,292.29,273.51,-18.78000000000003,0.0,0.0,0.060408360208871484,0.05648369205736679
+relative-hidden-rms,4096,100,0.62,0.63,1.0,-7.000000000000001,9.0,8,7,1.0,1.0,292.29,327.1,34.81,0.0,0.01,0.060408360208871484,0.05979048943514693

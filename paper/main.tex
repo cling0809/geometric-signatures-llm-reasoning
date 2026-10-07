@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+\PassOptionsToPackage{hyphens}{url}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{url}
+
+% Official TACL submission style. The default option is anonymous submission
+% with page numbers, rulers, and the confidential TACL header.
+\usepackage[]{tacl2021v1}
+
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{dblfloatfix}
+\usepackage{float}
+\usepackage{placeins}
+
+\Urlmuskip=0mu plus 1mu\relax
+\emergencystretch=3em
+
+\raggedbottom
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{6}
+\setcounter{dbltopnumber}{3}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.80}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.82}
+\renewcommand{\dbltopfraction}{0.92}
+\renewcommand{\dblfloatpagefraction}{0.82}
+\setlength{\dbltextfloatsep}{7pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{7pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{7pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{0pt}
+\renewcommand{\arraystretch}{1.08}
+\setlist[itemize]{leftmargin=*,topsep=2pt,itemsep=1.5pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=2pt,itemsep=1pt,parsep=0pt,partopsep=0pt}
+\setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\setlength{\@fpsep}{8pt plus 1fil}
+\setlength{\@dblfptop}{0pt}
+\setlength{\@dblfpbot}{0pt plus 1fil}
+\setlength{\@dblfpsep}{8pt plus 1fil}
+\makeatother
+
+\newcommand{\num}[1]{#1}
+\newcounter{alg}
+\newcommand{\algtitle}[1]{\refstepcounter{alg}\textbf{Algorithm~\thealg.}~#1}
+
+\title{Geometric Signatures of Post-Training in LLM Reasoning Trajectories:\\
+       Separating Observability from Transferability}
+
+\author{%
+  Anonymous TACL submission
+}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/00_abstract}
+\input{sections/01_intro}
+\input{sections/02_related}
+\input{sections/03_framework}
+\input{sections/04_phenomenon}
+\input{sections/05_geovote}
+\input{sections/06_crosssteer}
+\input{sections/08_discussion}
+\input{sections/09_limitations_ethics}
+
+\bibliographystyle{acl_natbib}
+\bibliography{references}
+
+\clearpage
+\appendix
+\raggedbottom
+\setlength{\textfloatsep}{5pt plus 1pt minus 1pt}
+\setlength{\floatsep}{4pt plus 1pt minus 1pt}
+\setlength{\intextsep}{5pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
+\input{sections/09_appendix}
+
+\end{document}

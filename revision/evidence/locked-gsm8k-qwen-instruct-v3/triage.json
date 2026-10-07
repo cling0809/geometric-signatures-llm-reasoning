@@ -1,0 +1,211 @@
+{
+  "crosssteer": {
+    "beaten_by": [
+      "caa_target_prompt_final",
+      "sae_sparse_activation",
+      "negative_crosssteer_source",
+      "sparse_caa_coordinate_10pct",
+      "target_calibrated",
+      "actadd_target_prompt_final",
+      "matched_norm_random"
+    ],
+    "beats_all_fair_baselines": false,
+    "ci_low_pp": -6.0,
+    "delta_pp": -1.0,
+    "supported": false
+  },
+  "decoding_envelope_valid": true,
+  "expected_n": 100,
+  "max_observed_truncation_rate": 0.06,
+  "max_truncation_rate": 0.25,
+  "methods": [
+    {
+      "alpha": 0.1,
+      "baseline_accuracy": 0.62,
+      "baseline_repetition": 0.0578,
+      "baseline_truncation_rate": 0.06,
+      "breaks": 5,
+      "ci_pp": [
+        0.0,
+        16.0
+      ],
+      "delta_pp": 8.0,
+      "exact_p": 0.09625244140625,
+      "generated_token_delta": -7.6,
+      "holm_p": 0.73828125,
+      "layer": 20,
+      "method": "caa_target_prompt_final",
+      "method_accuracy": 0.7,
+      "method_repetition": 0.0583,
+      "method_truncation_rate": 0.03,
+      "n": 100,
+      "repairs": 13,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "alpha": 0.1,
+      "baseline_accuracy": 0.62,
+      "baseline_repetition": 0.0578,
+      "baseline_truncation_rate": 0.06,
+      "breaks": 3,
+      "ci_pp": [
+        0.0,
+        14.0
+      ],
+      "delta_pp": 7.0,
+      "exact_p": 0.09228515625,
+      "generated_token_delta": -10.76,
+      "holm_p": 0.73828125,
+      "layer": 20,
+      "method": "sae_sparse_activation",
+      "method_accuracy": 0.69,
+      "method_repetition": 0.0559,
+      "method_truncation_rate": 0.04,
+      "n": 100,
+      "repairs": 10,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "alpha": 0.1,
+      "baseline_accuracy": 0.62,
+      "baseline_repetition": 0.0578,
+      "baseline_truncation_rate": 0.06,
+      "breaks": 4,
+      "ci_pp": [
+        -1.0,
+        13.0
+      ],
+      "delta_pp": 6.0,
+      "exact_p": 0.1795654296875,
+      "generated_token_delta": -2.93,
+      "holm_p": 1.0,
+      "layer": 24,
+      "method": "negative_crosssteer_source",
+      "method_accuracy": 0.68,
+      "method_repetition": 0.0541,
+      "method_truncation_rate": 0.04,
+      "n": 100,
+      "repairs": 10,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "alpha": 0.2,
+      "baseline_accuracy": 0.62,
+      "baseline_repetition": 0.0578,
+      "baseline_truncation_rate": 0.06,
+      "breaks": 8,
+      "ci_pp": [
+        -5.0,
+        12.0
+      ],
+      "delta_pp": 3.0,
+      "exact_p": 0.6476058959960938,
+      "generated_token_delta": -4.94,
+      "holm_p": 1.0,
+      "layer": 20,
+      "method": "sparse_caa_coordinate_10pct",
+      "method_accuracy": 0.65,
+      "method_repetition": 0.0613,
+      "method_truncation_rate": 0.05,
+      "n": 100,
+      "repairs": 11,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "alpha": 0.1,
+      "baseline_accuracy": 0.62,
+      "baseline_repetition": 0.0578,
+      "baseline_truncation_rate": 0.06,
+      "breaks": 9,
+      "ci_pp": [
+        -6.0,
+        12.0
+      ],
+      "delta_pp": 3.0,
+      "exact_p": 0.6636238098144531,
+      "generated_token_delta": -17.13,
+      "holm_p": 1.0,
+      "layer": 20,
+      "method": "target_calibrated",
+      "method_accuracy": 0.65,
+      "method_repetition": 0.0573,
+      "method_truncation_rate": 0.04,
+      "n": 100,
+      "repairs": 12,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "alpha": 0.05,
+      "baseline_accuracy": 0.62,
+      "baseline_repetition": 0.0578,
+      "baseline_truncation_rate": 0.06,
+      "breaks": 5,
+      "ci_pp": [
+        -5.0,
+        7.0
+      ],
+      "delta_pp": 1.0,
+      "exact_p": 1.0,
+      "generated_token_delta": -6.55,
+      "holm_p": 1.0,
+      "layer": 20,
+      "method": "actadd_target_prompt_final",
+      "method_accuracy": 0.63,
+      "method_repetition": 0.0585,
+      "method_truncation_rate": 0.04,
+      "n": 100,
+      "repairs": 6,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "alpha": 0.025,
+      "baseline_accuracy": 0.62,
+      "baseline_repetition": 0.0578,
+      "baseline_truncation_rate": 0.06,
+      "breaks": 1,
+      "ci_pp": [
+        -2.0,
+        4.0
+      ],
+      "delta_pp": 1.0,
+      "exact_p": 1.0,
+      "generated_token_delta": -7.28,
+      "holm_p": 1.0,
+      "layer": 24,
+      "method": "matched_norm_random",
+      "method_accuracy": 0.63,
+      "method_repetition": 0.0549,
+      "method_truncation_rate": 0.04,
+      "n": 100,
+      "repairs": 2,
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "alpha": 0.025,
+      "baseline_accuracy": 0.62,
+      "baseline_repetition": 0.0578,
+      "baseline_truncation_rate": 0.06,
+      "breaks": 4,
+      "ci_pp": [
+        -6.0,
+        4.0
+      ],
+      "delta_pp": -1.0,
+      "exact_p": 1.0,
+      "generated_token_delta": -18.19,
+      "holm_p": 1.0,
+      "layer": 14,
+      "method": "crosssteer_source",
+      "method_accuracy": 0.61,
+      "method_repetition": 0.0574,
+      "method_truncation_rate": 0.03,
+      "n": 100,
+      "repairs": 3,
+      "verdict": "INCONCLUSIVE"
+    }
+  ],
+  "n_methods": 8,
+  "narrative": "NO_METHOD_SUPPORTED",
+  "protocol": "tacl-11241-locked-report-triage-v1",
+  "report_path": "/root/AI/runs/tacl-revision/locked-report-qwen-instruct-v3/locked_summary.csv"
+}

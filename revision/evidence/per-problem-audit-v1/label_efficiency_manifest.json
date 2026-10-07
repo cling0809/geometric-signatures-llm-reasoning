@@ -1,0 +1,79 @@
+{
+  "excluded_content_columns": [
+    "answer",
+    "generated_text",
+    "generation_seed",
+    "gold",
+    "pred",
+    "problem",
+    "prompt",
+    "question"
+  ],
+  "output": {
+    "columns": [
+      "suite",
+      "comparison",
+      "arm",
+      "layer",
+      "alpha",
+      "sample_id",
+      "correct",
+      "text_tokens",
+      "n_generated_tokens",
+      "n_content_tokens",
+      "stop_reason",
+      "truncated",
+      "text_tokens_whitespace",
+      "distinct_2gram_ratio",
+      "distinct_4gram_ratio",
+      "repeated_4gram_fraction",
+      "answer_marker_position",
+      "answer_marker_relative_position"
+    ],
+    "file": "label_efficiency.csv",
+    "rows": 1200,
+    "sha256": "42a6ceb0aaabd403219d092b92bef8bf68f866e0464ea6bd9103d057f2b747bf"
+  },
+  "privacy_boundary": "No prompt, problem text, gold answer, prediction, generated text, or generation seed is included.",
+  "protocol": "tacl-11241-anonymous-per-problem-audit-v1",
+  "report_manifest_sha256": "e3e9b719f66357ed893713ab844de219e6970c27d3bab0d78a91fd41b23f4e7d",
+  "source_artifacts": [
+    {
+      "comparison": "k000_source_transfer",
+      "relative_source": "k000_source_transfer/per_sample.parquet",
+      "rows": 200,
+      "sha256": "2e4599e02d2e8cab11d615118f08920d82b1162e31457cd1b7968877fedba676"
+    },
+    {
+      "comparison": "k005",
+      "relative_source": "k005/per_sample.parquet",
+      "rows": 200,
+      "sha256": "1c7fcd348150fbb2e1293761349b50b0bce9059f61e259b6fc5bf8b728f8cd73"
+    },
+    {
+      "comparison": "k010",
+      "relative_source": "k010/per_sample.parquet",
+      "rows": 200,
+      "sha256": "99a577b5a5efaa7ba8294b1fcf5ac6f77236975b074ba532776a3987de8ea5ff"
+    },
+    {
+      "comparison": "k020",
+      "relative_source": "k020/per_sample.parquet",
+      "rows": 200,
+      "sha256": "8f40f32513917d3966d4858e265de570f99de9f06581d461c2fdcf8ea369071c"
+    },
+    {
+      "comparison": "k050",
+      "relative_source": "k050/per_sample.parquet",
+      "rows": 200,
+      "sha256": "3c0bb9fc7778626069972ad6f3071c416fbc5bf91e08a0bbf9a91f0dd1b355ca"
+    },
+    {
+      "comparison": "k100",
+      "relative_source": "k100/per_sample.parquet",
+      "rows": 200,
+      "sha256": "5d9450526083ace1f2b9ddf08bab5410e5b90d1b771ef21451042c97dd67b7f5"
+    }
+  ],
+  "suite": "label_efficiency"
+}

@@ -1,0 +1,9 @@
+run,dataset,prefix_n,method_a,method_b,both_correct,a_only_recovery,b_only_breakage,both_wrong,net_a_minus_b,n_questions
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,geovote,majority,88,0,2,10,-2,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,geo_majority,majority,88,0,2,10,-2,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,geovote,logprob_weighted,80,8,2,10,6,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,8,geo_majority,logprob_weighted,80,8,2,10,6,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,geovote,majority,90,0,2,8,-2,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,geo_majority,majority,91,0,1,8,-1,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,geovote,logprob_weighted,82,8,2,8,6,100
+2026-05-17_c1-qwen-math-sample16,gsm8k,16,geo_majority,logprob_weighted,82,9,2,7,7,100

@@ -1,0 +1,17 @@
+exp_id: 2026-05-20_robust2048-qwen-instruct-gsm8k-100
+seed: 42
+
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:0
+
+dataset:
+  name: gsm8k
+  source: oss
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 2048

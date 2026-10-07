@@ -1,0 +1,11 @@
+run,dataset,prefix_n,analysis,value,p_value
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_spearman_geo_correct,0.47748847088192004,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_spearman_count_correct,0.4867546187627809,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_spearman_logprob_correct,0.45822736007837767,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_partial_corr_geo_ctrl_count_logprob,0.0885233628189914,0.15226364698664432
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_group_cv_choice_acc:count_frac_z,0.76,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_group_cv_choice_acc:logprob_weight_sum_z,0.72,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_group_cv_choice_acc:geo_weight_sum_z,0.77,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_group_cv_choice_acc:count_frac_z+logprob_weight_sum_z,0.75,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_group_cv_choice_acc:count_frac_z+geo_weight_sum_z,0.77,
+2026-05-19_qwen-math-math500-2048-n8,math500,8,candidate_group_cv_choice_acc:count_frac_z+logprob_weight_sum_z+geo_weight_sum_z,0.75,

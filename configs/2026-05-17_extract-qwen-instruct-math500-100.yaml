@@ -1,0 +1,17 @@
+exp_id: 2026-05-17_extract-qwen-instruct-math500-100
+seed: 42
+
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  source: modelscope
+  dtype: bfloat16
+  device: cuda:1
+
+dataset:
+  name: math500
+  source: hf-mirror
+  split: test
+  n_samples: 100
+
+extraction:
+  max_new_tokens: 768
