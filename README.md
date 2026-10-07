@@ -118,13 +118,11 @@ revision/                protocols and content-free evidence tables
 tests/                   CPU unit and regression tests
 ```
 
-The submitted-paper snapshot is deliberately not part of this worktree and is
-kept immutable elsewhere.  This repository does not ship private model weights,
-large raw hidden-state tensors, or benchmark data whose license forbids
-redistribution.  This release includes compact vector and manifest artifacts,
-hash-verified content-free per-problem correctness/behavior tables, exact
-scripts, configs, test instructions, and a clear list of external model/dataset
-prerequisites.
+This repository does not ship model weights, saved steering vectors, raw
+hidden-state tensors, or benchmark text whose license forbids redistribution.
+It includes report and provenance manifests, hash-verified content-free
+per-problem correctness/behavior tables, exact scripts, configs, test
+instructions, and a clear list of external model/dataset prerequisites.
 
 ## Claim boundaries
 
