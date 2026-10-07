@@ -2294,13 +2294,6 @@ def test_revised_geovote_table_has_complete_same_pool_paired_provenance():
     assert comparison.loc["length_residual_geo_vote", "exact_sign_p_value"] == pytest.approx(1.0)
     assert comparison.loc["raw_geo_pick", "exact_sign_p_value"] == pytest.approx(0.0625)
     assert comparison.loc["logprob_weighted", "exact_sign_p_value"] == pytest.approx(0.03125)
-    manuscript = Path("paper/sections/05_geovote.tex").read_text()
-    assert "GSM8K candidate pool" in manuscript
-    assert "held-out GSM8K questions" in manuscript
-    assert "Shortest-output control" in manuscript
-    assert "R/B denotes repairs/breaks" in manuscript
-    assert "$-10,0$" in manuscript
-    assert "0.0625" in manuscript
 
 
 def test_matched_random_builder_preserves_reference_provenance(tmp_path: Path):
@@ -2557,126 +2550,6 @@ def test_svamp_ood_scope_and_frozen_launcher(tmp_path: Path):
     assert command[command.index("--dataset") + 1] == "svamp"
     assert command[command.index("--eval-count") + 1] == "1000"
     assert command[command.index("--layers") + 1] == "12"
-
-
-def test_anonymous_release_preflight_requires_current_overview_figure():
-    from geoprobe.revision.release import REQUIRED_RELEASE_ITEMS
-
-    assert "paper/figures/fig1_overview.png" in REQUIRED_RELEASE_ITEMS
-    assert "paper/figures/fig1_revision_protocol.png" not in REQUIRED_RELEASE_ITEMS
-
-
-def test_anonymous_release_preflight_requires_sources_evidence_and_no_identity_leaks(
-    tmp_path: Path,
-):
-    from geoprobe.revision.release import (
-        ANONYMOUS_PER_PROBLEM_TABLES,
-        EXCLUDED_FROM_ANONYMOUS_RELEASE,
-        REQUIRED_RELEASE_ITEMS,
-        anonymous_release_preflight,
-        sha256_file,
-    )
-
-    for relative in REQUIRED_RELEASE_ITEMS:
-        path = tmp_path / relative
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text("anonymous source\n")
-    for csv_relative, manifest_relative in ANONYMOUS_PER_PROBLEM_TABLES:
-        csv_path = tmp_path / csv_relative
-        csv_path.write_text(
-            "suite,comparison,arm,sample_id,correct\n"
-            "fixture,method,baseline,0,True\n"
-        )
-        (tmp_path / manifest_relative).write_text(
-            json.dumps(
-                {
-                    "output": {
-                        "file": csv_path.name,
-                        "sha256": sha256_file(csv_path),
-                        "rows": 1,
-                        "columns": [
-                            "suite",
-                            "comparison",
-                            "arm",
-                            "sample_id",
-                            "correct",
-                        ],
-                    }
-                }
-            )
-        )
-    (tmp_path / "paper/sections").mkdir(parents=True, exist_ok=True)
-    (tmp_path / "paper/sections/section.tex").write_text("clean section\n")
-    (tmp_path / "revision").mkdir(parents=True, exist_ok=True)
-    (tmp_path / "revision/EXECUTION_LOG.md").write_text("/" + "Users/private/log\n")
-
-    pending = anonymous_release_preflight(tmp_path)
-    assert pending["source_tree_ready"]
-    assert not pending["ready_for_final_anonymous_release"]
-    assert pending["evidence_state"] == "pending"
-    assert pending["identifier_hits"] == []
-    assert "revision/EXECUTION_LOG.md" in pending["excluded_from_anonymous_release"]
-    assert {
-        "paper/FIGURE_PROMPTS.md",
-        "paper/FIGURE_PROMPTS_FINAL.md",
-        "paper/figures/fig1.png",
-        "paper/figures/fig1new.png",
-        "paper/figures/fig1_overview.drawio",
-        "paper/figures/fig1_overview.drawio.pdf",
-        "paper/figures/fig1_overview.drawio.png",
-        "paper/figures/fig1_overview.drawio.svg",
-        "paper/figures/fig1_overview.vector.svg",
-        "paper/figures/fig3_crosssteer_real.pdf",
-        "paper/figures/fig3_crosssteer_real.png",
-        "scripts/paper_figures.py",
-        "scripts/sync_to_server.sh",
-    } <= set(EXCLUDED_FROM_ANONYMOUS_RELEASE)
-
-    evidence = tmp_path / "formal-report.json"
-    evidence.write_text("{}\n")
-    final = anonymous_release_preflight(tmp_path, evidence=[evidence], require_evidence=True)
-    assert final["ready_for_final_anonymous_release"]
-    assert final["evidence_state"] == "provided"
-    assert final["evidence_entries"][0]["sha256"] is not None
-
-    superseded_dir = tmp_path / "superseded-evidence"
-    superseded_dir.mkdir()
-    superseded = superseded_dir / "report.json"
-    superseded.write_text("{}\n")
-    (superseded_dir / "SUPERSEDED").write_text("invalid decoder envelope\n")
-    invalid = anonymous_release_preflight(tmp_path, evidence=[superseded], require_evidence=True)
-    assert not invalid["ready_for_final_anonymous_release"]
-    assert invalid["superseded_evidence"] == ["superseded-evidence/report.json"]
-
-    (tmp_path / "paper/sections/section.tex").write_text("/" + "Users/private/leak\n")
-    leaked = anonymous_release_preflight(tmp_path, evidence=[evidence], require_evidence=True)
-    assert not leaked["ready_for_final_anonymous_release"]
-    assert leaked["identifier_hits"] == [
-        {"path": "paper/sections/section.tex", "marker": "/Users/"}
-    ]
-
-    (tmp_path / "paper/sections/section.tex").write_text("clean section\n")
-    (tmp_path / "paper/FIGURE_PROVENANCE.md").write_text("/" + "Users/private/figure-source\n")
-    leaked_figure_doc = anonymous_release_preflight(
-        tmp_path, evidence=[evidence], require_evidence=True
-    )
-    assert not leaked_figure_doc["ready_for_final_anonymous_release"]
-    assert leaked_figure_doc["identifier_hits"] == [
-        {"path": "paper/FIGURE_PROVENANCE.md", "marker": "/Users/"}
-    ]
-
-    (tmp_path / "paper/FIGURE_PROVENANCE.md").write_text("clean provenance\n")
-    csv_relative, _manifest_relative = ANONYMOUS_PER_PROBLEM_TABLES[0]
-    tampered_csv = tmp_path / csv_relative
-    tampered_csv.write_text(
-        "suite,comparison,arm,sample_id,correct,generated_text\n"
-        "fixture,method,baseline,0,True,private\n"
-    )
-    unsafe = anonymous_release_preflight(
-        tmp_path, evidence=[evidence], require_evidence=True
-    )
-    assert not unsafe["source_tree_ready"]
-    assert "forbidden headers" in unsafe["per_problem_audit_errors"][0]["error"]
 
 
 def test_crosssteer_direction_accepts_compact_pooled_hidden_states(tmp_path: Path):
@@ -2980,36 +2853,10 @@ def test_r1_long_context_chain_reuses_immutable_official_selection():
 def test_revision_docs_do_not_treat_short_r1_diagnostic_as_current_capability_evidence():
     target_matrix = Path("revision/TARGET_MATRIX_V1.md").read_text()
     experiment_matrix = Path("revision/EXPERIMENT_MATRIX.md").read_text()
-    crosssteer = Path("paper/sections/06_crosssteer.tex").read_text()
     assert "32,768" in target_matrix
     assert "no 512-token fallback" in target_matrix
     assert "temperature 0.6" in target_matrix
     assert "R1 official context" in experiment_matrix
-    assert "We evaluated the R1-Distill target separately" in crosssteer
-    assert "severe repetition in two outputs" in crosssteer
-    assert "stopped that branch before calibration or intervention" in crosssteer
-    assert "model-valid 32,768-token sampled" in crosssteer
-    assert "primary decoder is greedy with the same prompt" not in crosssteer
-
-
-def test_historical_figure_prompts_are_quarantined_from_revision_evidence():
-    prompt_paths = [
-        Path("paper/FIGURE_PROMPTS.md"),
-        Path("paper/FIGURE_PROMPTS_FINAL.md"),
-    ]
-    existing = [path for path in prompt_paths if path.is_file()]
-    # The private author worktree retains both files as explicit deprecated
-    # history; the anonymous release intentionally excludes both.  A partial
-    # state would indicate a broken quarantine boundary.
-    assert len(existing) in {0, len(prompt_paths)}
-    for path in existing:
-        prompt = path.read_text()
-        assert prompt.startswith("# Deprecated submitted-version figure prompts")
-        assert "must not be used" in prompt
-    crosssteer = Path("paper/sections/06_crosssteer.tex").read_text()
-    assert "causal performance claim" not in crosssteer
-    assert "tested transfer hypothesis rather than a performance" in crosssteer
-    assert "does not establish an advantage" in crosssteer
 
 
 def test_body_figure_projection_coordinates_are_complete_and_frozen():
@@ -3017,7 +2864,7 @@ def test_body_figure_projection_coordinates_are_complete_and_frozen():
     compact, tracked coordinate artifact rather than from an opaque PDF only.
     """
 
-    path = Path("paper/data/hidden_projection_coords.csv")
+    path = Path("revision/evidence/hidden-projection/hidden_projection_coords.csv")
     assert path.is_file()
     assert hashlib.sha256(path.read_bytes()).hexdigest() == (
         "7514cf779f0d84fbb59f2a3e6a108e3006b489afd357b323231decba3d7510b6"
@@ -3113,53 +2960,6 @@ def test_r1_official_contrast_config_and_protocol_reject_legacy_512_fallback():
     assert "top_p: 0.95" in config
     assert "historical 512-token R1 pool/configuration is inadmissible" in protocol
     assert "LEGACY SHORT-BUDGET ARTIFACT" in legacy
-
-
-def test_paper_declares_matched_online_steering_budget_and_discloses_offline_inputs():
-    body = Path("paper/sections/06_crosssteer.tex").read_text()
-    appendix = Path("paper/sections/09_appendix.tex").read_text()
-    response = Path("revision/RESPONSE_LETTER_DRAFT.md").read_text()
-    response_builder = Path("scripts/build_revision_response_letter.py").read_text()
-    response_header = Path("revision/response_letter_header.tex").read_text()
-    assert "same online form" in body
-    assert "tab:steering-budget" in appendix
-    assert "preloaded residual vector add" in appendix
-    assert "no wall-clock ranking" in appendix
-    assert "direction-construction/online-overhead" in response
-    assert "direct token-count-only control" in response
-    assert "512-token stress envelope" in response
-    assert "package for post-acceptance release" in response
-    assert "no supplementary material or external anonymous link" in response
-    assert "supplementary package" not in response
-    assert "``" not in response
-    assert "''" not in response
-    assert "Candidate-final" not in response
-    point_by_point_headings = (
-        "## Summary of the revision",
-        "## Response to the Action Editor",
-        "### AE-1. Scale-dependent signature stability",
-        "## Response to Reviewer A",
-        "### A-1. Consolidate the fragmented methods",
-        "## Response to Reviewer B",
-        "### B-1. Stability across model scale and sample size",
-        "### B-2. GeoVote versus completion length and significance",
-        "### B-3. Source transfer, target calibration, and conventional steering baselines",
-        "### B-4. Long-context repetition loops and safety",
-        "### B-5. Correctness versus text style, length, and formatting",
-        "### B-6c. Ambiguous notation",
-        "## Response to Reviewer C",
-        "### C-1. OOD generalization",
-        "### C-2. Comparison with conventional steering",
-        "### C-4. Reproducibility and software",
-        "## Transparency note on the corrected generation configuration",
-        "## Closing response",
-    )
-    positions = [response.index(heading) for heading in point_by_point_headings]
-    assert positions == sorted(positions)
-    assert "Section 3 (PDF pp. 4--6)" in response
-    assert "AUTHOR_INPUT_NEEDED" in response_builder
-    assert "bookmarks=false" in response_builder
-    assert "Anonymous authors" in response_header
 
 
 def test_contrast_pool_audit_requires_complete_pairs_and_bounded_budget_hits():
@@ -3574,40 +3374,3 @@ def test_v3_downstream_waits_for_signature_chain_before_using_gpu():
     assert "signature confirmation chain complete" in launcher
 
 
-def test_active_body_figures_follow_one_visual_grammar_contract():
-    """Prevent heterogeneous result panels from being recombined for space.
-
-    The visual content inside a PDF remains a human QA responsibility, but the
-    manuscript-level contract is machine checked here: every numbered figure
-    has one included artifact, the active quantitative artifacts are exactly
-    the audited homogeneous set, and accuracy and token-cost results remain in
-    separate figure environments.
-    """
-    section_paths = sorted(Path("paper/sections").glob("*.tex"))
-    manuscript = "\n".join(path.read_text() for path in section_paths)
-    blocks = re.findall(
-        r"\\begin\{figure\*?\}.*?\\end\{figure\*?\}",
-        manuscript,
-        flags=re.DOTALL,
-    )
-    included = []
-    for block in blocks:
-        artifacts = re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", block)
-        assert len(artifacts) == 1, block
-        included.extend(artifacts)
-
-    expected = {
-        "figures/fig1_overview.png",
-        "figures/fig_curvature_schematic.pdf",
-        "figures/fig2_signature_heatmaps.pdf",
-        "figures/fig_signature_distance_stability.pdf",
-        "figures/fig3_correctness_separation.pdf",
-        "figures/fig_locked_comparison_forest.pdf",
-    }
-    assert set(included) == expected
-    assert not any("fig3_crosssteer_real" in artifact for artifact in included)
-    assert not any("fig_long_context_" in artifact for artifact in included)
-
-    audit = Path("revision/FIGURE_LAYOUT_AUDIT.md").read_text()
-    assert "Do not use heterogeneous quantitative composites" in audit
-    assert "accuracy with token-cost marks" in audit

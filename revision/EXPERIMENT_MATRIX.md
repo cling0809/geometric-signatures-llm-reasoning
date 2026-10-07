@@ -1,6 +1,6 @@
 # Frozen Revision Experiment Matrix
 
-**Status:** Historical preregistered matrix.  All required downstream cells have now been dispositioned; the current evidence and claim boundary are recorded in `revision/FINAL_CLAIM_AUDIT.md` and `paper/TACL_READINESS_STATUS.md`.
+**Status:** Historical preregistered matrix.  All required downstream cells have now been dispositioned; the current evidence is recorded in `revision/evidence/`.
 
 ## Stage 0 — infrastructure and audit (CPU first)
 

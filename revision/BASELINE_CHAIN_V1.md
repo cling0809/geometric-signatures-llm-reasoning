@@ -1,6 +1,6 @@
 # Predeclared Steering-Baseline Chain V1
 
-**Status:** Historical execution protocol.  The chain has completed; do not interpret the preconditions below as a current pending state.  Consult `revision/FINAL_CLAIM_AUDIT.md` and `revision/evidence/` for the final disposition.
+**Status:** Historical execution protocol.  The chain has completed; do not interpret the preconditions below as a current pending state.  Consult `revision/evidence/` for the final disposition.
 
 This document freezes the automatic post-validation execution order. It exists
 to ensure that CAA, ActAdd, and the coordinate-sparse ablation receive the same

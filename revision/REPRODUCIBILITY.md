@@ -131,25 +131,17 @@ result substitutes for an R1 repair claim.  Reproduction of this boundary uses
 the three `revision_gsm8k_r1_official32k_*.yaml` configs, the pooled
 extractor/readiness audit, and both R1 protocol documents.
 
-## What the final anonymous release must include
+## What this public release includes
 
-- exact paper revision source, response-letter Markdown, and its reproducible
-  Pandoc/Tectonic build script;
 - configs, scripts, unit tests, resolved-run manifests, and completed
   multi-EOS generation-runtime sidecars;
 - grader/evaluator version and prompt/template description;
 - per-problem correctness/behavior fields and aggregate paired statistics;
 - compact vectors/provenance, not private model weights or enormous raw hidden
   dumps;
-- `paper/FIGURE_PROVENANCE.md`, the body figure generators, and the compact
-  correctness-projection coordinates needed to regenerate the descriptive
-  density visualization; and
+- the compact correctness-projection coordinates in
+  `revision/evidence/hidden-projection/`; and
 - an install command plus this CPU smoke command.
-
-Before packaging, run `scripts/revision_anonymous_release_preflight.py` with the
-final locked/OOD/long-context report manifests.  It inventories required source
-artifacts, rejects local identity markers, records intentional exclusions, and
-fails if final evidence is required but missing.
 
 Any unavailable model artifact or benchmark license constraint will be stated
 explicitly in the reproducibility checklist rather than silently omitted.
@@ -158,8 +150,7 @@ explicitly in the reproducibility checklist rather than silently omitted.
 
 The following is a dated historical snapshot from before the frozen Qwen
 validation family completed.  It validates packaging and protocol code, not
-scientific performance; the current final status is recorded in
-`revision/FINAL_CLAIM_AUDIT.md` and `revision/FINAL_AUTHOR_CHECKLIST.md`.
+scientific performance. Current result tables are in `revision/evidence/`.
 
 ```text
 PYTHONPATH=src python scripts/revision_smoke_demo.py --out /tmp/geoprobe-revision-smoke-20260804-0631

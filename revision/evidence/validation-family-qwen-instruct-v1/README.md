@@ -4,7 +4,7 @@
 >
 > This v1 validation family (and its selection and locked descendants) was
 > generated under the EOS override defect documented in
-> `revision/FINAL_CLAIM_AUDIT.md` and the frozen evidence manifests. In that
+> `revision/evidence/`. In that
 > run, the steering runner passed `tokenizer.eos_token_id`
 > (151645) instead of the model's full `[151645, 151643]` set, so every
 > completion was forced to 512 tokens (`truncation_rate=1.0`).  All v1 steering

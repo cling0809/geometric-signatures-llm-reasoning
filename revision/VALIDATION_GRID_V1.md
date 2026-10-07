@@ -1,6 +1,6 @@
 # Frozen GSM8K Steering Validation Grid V1
 
-**Status:** Historical frozen protocol; the validation and locked stages have completed.  Final outcomes are reported in `revision/FINAL_CLAIM_AUDIT.md`, `revision/REVIEWER_COMMENT_TRACKER.md`, and the mirrored evidence manifests.  This document records the protocol, not a pending run.
+**Status:** Historical frozen protocol; the validation and locked stages have completed.  Final outcomes are reported in `revision/evidence/`.  This document records the protocol, not a pending run.
 
 **Historical protocol note:** Declared before validation generation.  This document controlled the
 first fair comparison between the train-only `crosssteer_source` direction and

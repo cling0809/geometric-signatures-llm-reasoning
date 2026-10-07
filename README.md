@@ -114,9 +114,7 @@ layer, sign, alpha, schedule, seed, or metric after reading locked labels.
 src/geoprobe/revision/   protocol, vector provenance, behavior/stats, gates
 scripts/revision_*.py    audited CLI entry points and report builders
 configs/revision_*.yaml  resolved calibration/contrast-pool configuration
-revision/                preregistration, reviewer mapping, execution ledger
-paper/                   revision manuscript source (results inserted only from
-                         frozen report artifacts)
+revision/                protocols and content-free evidence tables
 tests/                   CPU unit and regression tests
 ```
 
@@ -139,6 +137,4 @@ prerequisites.
   new locked protocol demonstrates utility beyond token length and majority
   voting.
 
-See [`revision/CLAIM_REVISION_MAP.md`](revision/CLAIM_REVISION_MAP.md) and
-[`revision/RESULTS_REPLACEMENT_LEDGER.md`](revision/RESULTS_REPLACEMENT_LEDGER.md)
-for the exact submitted-to-revised claim transition.
+Protocol boundaries are in [`revision/REPRODUCIBILITY.md`](revision/REPRODUCIBILITY.md).
